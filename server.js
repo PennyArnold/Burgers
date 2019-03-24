@@ -22,7 +22,7 @@ app.set("view engine", "handlebars");
 
 //routes
 var routes = require("./controllers/burgers-controller.js");
-// app.use(routes);
+//  app.use(routes);
 
 //commands the port to listen
 app.listen(PORT, function() {
