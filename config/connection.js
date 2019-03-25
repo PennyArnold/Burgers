@@ -8,7 +8,7 @@ connection = mysql.createConnection({
     password: "John2012",
     database: "burgers_db"
 });
-connection.conect(function(err) {
+connection.connect(function(err) {
     if (err) {
         console.error("error connecting " + err.stack);
         return;
