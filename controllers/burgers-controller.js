@@ -9,7 +9,7 @@ router.get("/", function (req, res) {
     burger.selectAll(function (data) {
         var hdbrsObj = {
             burgers: data
-        };
+        }
         console.log((hdbrsObj));
         res.render("index", hdbrsObj);
     });
@@ -34,7 +34,7 @@ router.get("/", function (req, res) {
         burger.updateOne({
             devoured: req.body.devoured
         }, condition, function (result) {
-            if ((result, changedRows === 0)) {
+            if ((result.changedRows === 0)) {
                 return res.status(404).end();
             } else {
                 res.status(200).end();
@@ -46,7 +46,7 @@ router.get("/", function (req, res) {
         console.log("condition", condition);
 
         burger.deleteOne(condition, function (result) {
-            if ((result, changedRows === 0)) {
+            if ((result.changedRows === 0)) {
                 return res.status(404).end();
             } else {
                 res.status(200).end();
