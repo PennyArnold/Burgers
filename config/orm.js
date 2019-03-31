@@ -26,17 +26,17 @@ function translateSql(obj) {
 
 //create a variable called orm and export it which has selections and queries
 var orm = {
-    selectAll: function (table, cb) {
-        var dbQuery = "SELECT * FROM " + table + ";";
-
-        connection.query(dbQuery, function (err, res) {
-            if (err) {
-                throw err;
-            }
-            //call it back
-            cb(res);
-        });
+    selectAll: function(table, cb) {
+      var dbQuery = "SELECT * FROM " + table + ";";
+  
+      connection.query(dbQuery, function(err, res) {
+        if (err) {
+          throw err;
+        }
+        cb(res);
+      });
     },
+    
     insertOne: function (table, cols, vals, cb) {
         var dbQuery =
             "INSERT INTO " +
@@ -88,3 +88,4 @@ var orm = {
         });
     }
 };
+module.exports = orm;
