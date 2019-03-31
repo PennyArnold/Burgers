@@ -25,7 +25,7 @@ The following npm packages are required inside of the server.js file:
 *express
 *DB Setup
 
-# Setup  
+## Setup Sql
 Inside the burgers directory, I created a folder named db and created SQL queries (schema.sql) that do the following:
 
 *Create the burgers_db.
@@ -39,35 +39,3 @@ Also included is a seeds.sql file to insert queries to populate the burgers tabl
 
 I pasted the schema.sql and seeds.sql files into the mysql server from the command line and ran the SQL files.
 
-# Directory structure
-The following structure displays the files and directories:
-
-config
-*connection.js
-**orm.js
-
-controllers
-*burgers_controller.js
-
-db
-*schema.sql
-*seeds.sql
-models
-*burger.js
-
-node_modules
-
-package.json
-
-public
-*assets
-    *css
-       *burger_style.css
-   *img
-       *burger.png
-server.js
-
-views
-   *index.handlebars
-   *layouts
-       *main.handlebars
