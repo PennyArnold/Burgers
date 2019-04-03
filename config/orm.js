@@ -11,7 +11,7 @@ function createQmarks(num) {
     return arr.toString();
 }
 //helper that will translate the sql into a readable query
-function translateSql(obj) {
+function translateSql(ob) {
     var arr = [];
     for (var key in ob) {
         var value = ob[key];
@@ -64,7 +64,7 @@ var orm = {
             table +
             " SET " +
             translateSql(objColVals) +
-            "WHERE " +
+            " WHERE " +
             condition;
 
         console.log(dbQuery);
@@ -78,7 +78,7 @@ var orm = {
     },
     //to help manage the additions to the tables
     deleteOne: function (table, condition, cb) {
-        var dbQuery = "DELETE FROM " + table + "WHERE " + condition;
+        var dbQuery = "DELETE FROM " + table + " WHERE " + condition;
         console.log(dbQuery);
         connection.query(dbQuery, function (err, res) {
             if (err) {

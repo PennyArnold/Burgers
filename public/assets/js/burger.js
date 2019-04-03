@@ -34,16 +34,22 @@ $(function () {
             console.log("Burger devoured");
             location.reload();
         });
-    });
-    $(".trashburger").on("click", function(event) {
-        event.preventDefault();
-
-        var id = $(this.data("id"));
-        
-        //Send the DELETE request)
+        console.log("call delete AJAX");
         $.ajax({
             type: "DELETE",
             url: "/api/burgers/" + id 
         }).then(location.reload());
     });
+
+    // $(".eatbutton").on("click", function(event) {
+    //     event.preventDefault();
+
+    //     var id = $(this.data("id"));
+        
+    //     //Send the DELETE request)
+    //     $.ajax({
+    //         type: "DELETE",
+    //         url: "/api/burgers/" + id 
+    //     }).then(location.reload());
+    // });
 });

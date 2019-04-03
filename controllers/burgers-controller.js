@@ -5,13 +5,13 @@ var burger = require("../models/burger");
 var router = express.Router();
 //identifies endpoints
 //"get" router to handlebars object
-router.get("/", function(req, res) {
-    burger.selectAll(function(data) {
-      var hdbrsObj = {
-        burgers: data
-      };
-      console.log(hdbrsObj);
-      res.render("index", hdbrsObj);
+router.get("/", function (req, res) {
+    burger.selectAll(function (data) {
+        var hdbrsObj = {
+            burgers: data
+        };
+        console.log(hdbrsObj);
+        res.render("index", hdbrsObj);
     });
 
     //"post" router
@@ -34,6 +34,15 @@ router.get("/", function(req, res) {
         burger.updateOne({
             devoured: req.body.devoured
         }, condition, function (result) {
+            if ((result.changedRows === 0)) {
+                return res.status(404).end();
+            } else {
+                res.status(200).end();
+            }
+        });
+
+        burger.deleteOne(condition, function (result) {
+            console.log("delete in controller");
             if ((result.changedRows === 0)) {
                 return res.status(404).end();
             } else {
