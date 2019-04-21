@@ -1,7 +1,7 @@
 //function to ensure that everything loads first
 $(function () {
     //event triggers and then prevent initial load
-    $(".create-form").on("submit", function (event) {
+    $("#addburger").on("click", function (event) {
         event.preventDefault();
         //creates new burger
         var newBurger = {
