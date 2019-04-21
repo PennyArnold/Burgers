@@ -6,8 +6,8 @@ var connection;
 /* if (process.env.JAWSDB_URL) {
 connection = mysql.createConnection(process.env.JAWSBD_URL);
 } else { */
-    if (process.env.JAWSDB_URL)
-    {
+    // if (process.env.JAWSDB_URL)
+    // {
 
  
     connection = mysql.createConnection({
@@ -17,7 +17,7 @@ connection = mysql.createConnection(process.env.JAWSBD_URL);
     password: "bhyph9znfw6gpgqc",
     database: "fu8jsmurk4pig4g1"
 });
-    }
+   /*  }
     else{
         connection = mysql.createConnection({
         host: "localhost",
@@ -26,7 +26,7 @@ connection = mysql.createConnection(process.env.JAWSBD_URL);
         password: "password",
         database: "burgers_db"
         });
-    }
+    } */
 //  }; 
 
 
